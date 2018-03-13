@@ -1,0 +1,28 @@
+html,body,ul,ol,li,p,tr,td,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+a,button{
+    cursor: pointer;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear{
+    zoom: 1;
+}
+.clear:after{
+    content:"";
+    display: block;
+    clear: both;
+}

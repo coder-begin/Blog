@@ -1,0 +1,39 @@
+{% load static %}
+<style>
+    .home-login {
+        padding: 30px 80px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin: 30px 30px;
+    }
+
+    .home-login a {
+        text-align: center;
+        width: 150px;
+    }
+
+    .home-login button {
+        text-align: center;
+        width: 150px;
+    }
+
+</style>
+<div class="home-login">
+     <p class="error-info"></p>
+    <form class="login-form form-horizontal">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="username" class="form-control" id="username" placeholder="用户名" autocomplete="false">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" class="form-control" id="password" placeholder="密码" autocomplete="false">
+        </div>
+
+        <div class="form-group">
+            <button  class="btn login btn-default">登陆</button>
+            <a href="/register" class="btn btn-default">注册</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,122 @@
+{% extends 'layout/ContentLayout.html' %}
+{% load static %}
+{% block header %}
+    <title>用户信息</title>
+    <link rel="stylesheet" href="{% static 'user_info/user_info.css' %}">
+{% endblock %}
+
+
+
+{% block main %}
+    <p class="error-info"></p>
+    <form class="form-horizontal form-details info-change-form">
+        <div class="form-group ">
+            <label for="username" class="col-sm-2 control-label">用户名:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="username" value="{{ userInfo.username }}" disabled>
+            </div>
+
+        </div>
+
+        <div class="form-group ">
+            <label for="sex" class="col-sm-2 control-label">性别:</label>
+            <div class="col-sm-10">
+                <select name="sex" id="sex" class="form-control">
+                    {% if userInfo.sex == 0 %}
+                        <option value="0" selected>男</option>
+                        <option value="1">女</option>
+                        <option value="2">其他</option>
+                    {% elif userInfo.sex == 1 %}
+                        <option value="0">男</option>
+                        <option value="1" selected>女</option>
+                        <option value="2">其他</option>
+                    {% else %}
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                        <option value="2" selected>其他</option>
+                    {% endif %}
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-group ">
+            <label for="birthday" class="col-sm-2 control-label">出生日期:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control datetime" name="birthday" id="birthday"
+                       value="{{ userInfo.birthday }}">
+            </div>
+
+        </div>
+
+        <div class="form-group ">
+            <label for="email" class="col-sm-2 control-label">邮箱:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="email" id="email" value="{{ userInfo.email }}">
+            </div>
+
+        </div>
+
+
+        <div class="form-group ">
+            <label for="tel" class="col-sm-2 control-label">电话:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="tel" id="tel" value="{{ userInfo.tel }}">
+            </div>
+
+        </div>
+
+
+        <div class="form-group ">
+            <label for="described" class="col-sm-2 control-label">简介:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="described" id="described"
+                          value="{{ userInfo.described }}"></textarea>
+            </div>
+
+        </div>
+
+
+        <div class="form-group ">
+            <label for="position" class="col-sm-2 control-label">职位:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="position" id="position" value="{{ userInfo.position }}">
+            </div>
+
+        </div>
+
+
+        <div class="form-group ">
+            <label for="create_date" class="col-sm-2 control-label datetime">创建日期:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="create_date" value="{{ userInfo.create_date }}" disabled>
+            </div>
+
+        </div>
+
+
+        <div class="form-group ">
+            <label for="latest_date" class="col-sm-2 control-label datetime">最近登陆日期:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="latest_date" value="{{ userInfo.latest_date }}" disabled>
+            </div>
+
+        </div>
+
+
+        <div class="form-group ">
+            <div class="col-sm-10">
+                <input type="button" class="btn btn-primary" id="btn-change" value="确定">
+            </div>
+
+        </div>
+
+
+    </form>
+{% endblock %}
+
+
+
+{% block footer %}
+    <script src="{% static 'user_info/user_info.js' %}"></script>
+{% endblock %}

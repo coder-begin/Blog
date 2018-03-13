@@ -1,0 +1,17 @@
+.form-details{
+    width: 1200px;
+    margin: 100px auto;
+    text-align: center;
+    padding:0 250px 0 150px;
+}
+#btn-change{
+    width: 400px;
+    margin-left: 200px;
+}
+#described{
+    height: 100px;
+    resize: none;
+}
+body{
+    height: 1080px!important;
+}

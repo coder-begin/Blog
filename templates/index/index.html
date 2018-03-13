@@ -1,0 +1,20 @@
+{% extends 'layout/BasicLayout.html' %}
+{% load  static from staticfiles%}
+{% block header %}
+    <title>博客</title>
+    <link rel="stylesheet" href="{% static 'index/index.css' %}">
+{% endblock %}
+{% block main %}
+    <div class="main-box" style="background: url({% static 'images/think.jpg' %}) no-repeat center center">
+        <div class="content">
+            <h3>施羽的网站</h3>
+            <h5>ShiYu's Personal Website</h5>
+            <ul>
+                <li><a href="/home">个人博客</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    <script src="{% static 'index/index.js' %}"></script>
+{% endblock %}
